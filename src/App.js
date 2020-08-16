@@ -20,6 +20,7 @@ const Popular = React.lazy(() => import("./pages/Popular"));
 const New = React.lazy(() => import("./pages/New"));
 const Dog = React.lazy(() => import("./pages/animal/Dog"));
 const Cat = React.lazy(() => import("./pages/animal/Cat"));
+const Pic100 = React.lazy(() => import("./PicPage/Pic100"));
 const Pic101 = React.lazy(() => import("./PicPage/Pic101"));
 const Pic102 = React.lazy(() => import("./PicPage/Pic102"));
 const Pic103 = React.lazy(() => import("./PicPage/Pic103"));
@@ -61,7 +62,7 @@ export default class App extends Component {
               </div>
             </div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary rounded">
-              <a className="navbar-brand" href="/">
+              <a className="navbar-brand" href="/test-shop">
                 หน้าหลัก
               </a>
               <button
@@ -103,6 +104,9 @@ export default class App extends Component {
               <Route path="/new">
                 <New />
               </Route>
+              <Route path="/100">
+                <Pic100 />
+              </Route>
               <Route path="/101">
                 <Pic101 />
               </Route>
@@ -130,7 +134,7 @@ export default class App extends Component {
               <Route path="/cat">
                 <Cat />
               </Route>
-              <Route exact path="/">
+              <Route exact path="/test-shop">
                 <Home />
               </Route>
             </Switch>
