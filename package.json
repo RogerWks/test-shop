@@ -1,7 +1,7 @@
 {
   "name": "test-shop",
   "version": "0.1.0",
-  "homepage": "https://RogerWks.github.io/test-shop/",
+  "homepage": "https://RogerWks.github.io/",
   "private": true,
   "engines": {
     "node": "12.16.1",
