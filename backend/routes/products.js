@@ -9,4 +9,20 @@ router.get("/", (req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
+router.post("/add", (req, res) => {
+  Product.create(req.body)
+    .then((products) => {
+      res.json({
+        confirmation: "success",
+        data: products,
+      });
+    })
+    .catch((err) => {
+      res.json({
+        confirmation: "fail",
+        message: err.message,
+      });
+    });
+});
+
 module.exports = router;

@@ -5,6 +5,8 @@ import logo from "./logo_2.png";
 import { Route, Link, Switch } from "react-router-dom";
 import store from "./store";
 import { Provider } from "react-redux";
+import "./App.css";
+import Basket from "./components/Basket";
 
 const loading = () => (
   <div className="container">
@@ -28,6 +30,7 @@ const Pic104 = React.lazy(() => import("./PicPage/Pic104"));
 const Pic105 = React.lazy(() => import("./PicPage/Pic105"));
 const Pic106 = React.lazy(() => import("./PicPage/Pic106"));
 const Pic107 = React.lazy(() => import("./PicPage/Pic107"));
+const Pic108 = React.lazy(() => import("./PicPage/Pic108"));
 
 export default class App extends Component {
   render() {
@@ -61,8 +64,8 @@ export default class App extends Component {
                 </div>
               </div>
             </div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-primary rounded">
-              <a className="navbar-brand" href="/test-shop">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+              <a className="navbar-brand" href="/">
                 หน้าหลัก
               </a>
               <button
@@ -73,7 +76,7 @@ export default class App extends Component {
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div className="collapse navbar-collapse" id="navbarText">
+              <div className="collapse navbar-collapse" id="navbarColor01">
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item">
                     <Link to="/all" className="nav-link">
@@ -83,11 +86,55 @@ export default class App extends Component {
                   <li className="nav-item">
                     <Link to="#" className="nav-link"></Link>
                   </li>
-                  <li className="nav-item">
-                    <Link to="#" className="nav-link"></Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="#" className="nav-link"></Link>
+                </ul>
+              </div>
+              <div className="dropdown dropleft">
+                <ul className="navbar-nav justify-content-end">
+                  <li class="nav-item dropdown mydropdowncss">
+                    <Link
+                      to="#"
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdownMenuLink"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      ตะกร้าสินค้า &nbsp;
+                      <svg
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 16 16"
+                        class="bi bi-basket"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          d="M1 7v1h14V7H1zM.5 6a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5H.5z"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          d="M14 9H2v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9zM2 8a1 1 0 0 0-1 1v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1H2z"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          d="M4 10a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5z"
+                        />
+                      </svg>
+                    </Link>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="navbarDropdownMenuLink"
+                    >
+                      <a class="dropdown-item" href="#">
+                        <Basket />
+                      </a>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -128,13 +175,16 @@ export default class App extends Component {
               <Route path="/107">
                 <Pic107 />
               </Route>
+              <Route path="/108">
+                <Pic108 />
+              </Route>
               <Route path="/dog">
                 <Dog />
               </Route>
               <Route path="/cat">
                 <Cat />
               </Route>
-              <Route exact path="/test-shop">
+              <Route exact path="/">
                 <Home />
               </Route>
             </Switch>

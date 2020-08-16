@@ -12,7 +12,6 @@ export default class Home extends Component {
         <div className="row">
           <div className="col-sm-3">
             <br />
-            <Basket />
             <div className="list-group shadow">
               <li className="list-group-item d-flex justify-content-between align-items-center active">
                 เมนูลัด
