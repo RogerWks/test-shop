@@ -11,7 +11,7 @@ class Product extends Component {
         <div className="img-thumbnail shadow">
           <Link to={`${product.sku}`}>
             <img
-              src={`public/products/${product.animal}.jpg`}
+              src={`products/${product.animal}.jpg`}
               width="200"
               height="200"
               alt={product.title}
